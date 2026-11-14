@@ -2,21 +2,27 @@
 
 **DSC 201 Project 2 - Tarun Vigneswaran**
 
-Seven slides, about six minutes. Use the saved figures at a readable size.
+Eight slides, about six minutes. Use the saved figures at a readable size.
 All scores below are from the completed experiments, not another study.
 
-## Slide 1 - Project title and goal (35 seconds)
+## Slide 1 - Title: Comparing Machine Learning Models for Glioma Classification (20 seconds)
 
-- Comparing four models for glioma grade classification
-- Goal: predict the dataset's LGG or GBM label from clinical and mutation features
-- Educational comparison, not a medical diagnostic tool
+- Tarun Vigneswaran
+- DSC 201 Project 2, Data Science II, University of Tampa
+- Using clinical and gene-mutation features
 
-**Speaker notes:** I wanted to compare four common classification models on the
-same dataset. The question is which model gives the best results under the same
-evaluation process. This project predicts labels in existing glioma records;
-it does not diagnose people.
+**Speaker notes:** My project compares four machine learning models for glioma grade classification. I used the approved UCI dataset and kept the code close to the methods we covered in class. I will explain the data, the fair testing process, and the actual results.
 
-## Slide 2 - What are the two classes? (40 seconds)
+## Slide 2 - Introduction: the project question (30 seconds)
+
+- Predict the dataset's LGG or GBM label from clinical and mutation features
+- Compare four course models under the same testing conditions
+- Use 30 shared splits to see how much scores change
+- Educational comparison, not a medical diagnosis tool
+
+**Speaker notes:** The main question is whether clinical information and mutation features can help predict the LGG or GBM label in this dataset. I compare four standard classifiers under the same conditions. Each model gets the same people in training and testing within a repetition. Repeating that process 30 times shows how much the scores change with the split. This is a classroom comparison, not a tool for diagnosing people.
+
+## Slide 3 - What are the two classes? (35 seconds)
 
 - The dataset contains records of people with glioma, a type of brain tumor
 - Class 0: Lower-Grade Glioma, or LGG
@@ -28,7 +34,7 @@ between those labels, rather than deciding whether someone has a brain tumor.
 For precision, recall, and F1, I treated GBM as the class the models are trying
 to identify. This makes it clear what those scores mean.
 
-## Slide 3 - Dataset overview (45 seconds)
+## Slide 4 - Dataset overview (40 seconds)
 
 - UCI Glioma Grading Clinical and Mutation Features, dataset 759
 - 839 original records; 20 mutation features plus age, gender, and race
@@ -42,7 +48,7 @@ gene-mutation indicators. There are more LGG than GBM cases, so I did not rely
 on accuracy alone. The original file and variable dictionary are saved with
 the project so the source can be checked.
 
-## Slide 4 - Exploration and preparation (60 seconds)
+## Slide 5 - Exploration and preparation (55 seconds)
 
 - No missing values; one exact repeated record removed, leaving 838
 - No ages flagged by the IQR rule; all ages retained
@@ -57,7 +63,7 @@ identical records being split between training and testing. Without patient IDs,
 that is a judgment rather than proof of a repeated person. The box plot shows
 an age difference in this sample, but age cannot perfectly separate the classes.
 
-## Slide 5 - Four models and a fair test (65 seconds)
+## Slide 6 - Four models and a fair test (65 seconds)
 
 - Logistic Regression, Random Forest, AdaBoost, and XGBoost
 - Small parameter grids and five-fold stratified GridSearchCV
@@ -71,7 +77,7 @@ used afterward. I repeated the full process 30 times because one split can give
 a misleading picture. Scaling stayed inside the Logistic Regression pipeline
 so validation and test data did not set the scaling values.
 
-## Slide 6 - Actual results (80 seconds)
+## Slide 7 - Actual results (80 seconds)
 
 | Model | Mean test accuracy | Mean test F1 |
 |---|---|---|
@@ -93,7 +99,7 @@ The optional comparison also shows that adding clinical features did not improve
 every model. The separate confusion-matrix figure shows seed 100 only, not a
 combined result across all repetitions.
 
-## Slide 7 - Conclusion and limits (35 seconds)
+## Slide 8 - Conclusion and limits (35 seconds)
 
 - All four models were tuned and tested under a shared process
 - The highest mean F1 is a result for this setup, not a universal winner

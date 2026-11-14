@@ -105,9 +105,9 @@ If the result CSVs do not exist yet, run the full script first or enable that se
 - [results/](./results/): also includes each main model's actual and predicted classes for seed 100.
 - [results/figures/](./results/figures/): six exploration plots and five model-comparison figures.
 - [report/project_report.md](./report/project_report.md): written report based on the saved results.
-- [report/presentation_outline.md](./report/presentation_outline.md): seven-slide outline with speaker notes for about six minutes.
+- [report/presentation_outline.md](./report/presentation_outline.md): eight-slide outline with speaker notes for about six minutes.
 - [report/project_report.pdf](./report/project_report.pdf): formatted report with tables, figures, and the UCI citation.
-- [report/presentation.pptx](./report/presentation.pptx): editable seven-slide PowerPoint with speaker notes.
+- [report/presentation.pptx](./report/presentation.pptx): editable eight-slide PowerPoint with speaker notes.
 - [report/presentation.pdf](./report/presentation.pdf): PDF copy of the slides for easy viewing.
 
 ## Presentation and submission
@@ -150,7 +150,7 @@ educational comparison, not clinical deployment or claims about individual patie
   test records across all four models.
 - The split and optional standardization were checked for row separation,
   alignment, and use of training-only scaling values.
-- The 14-page report PDF and seven-slide PowerPoint were rendered and visually
+- The 14-page report PDF and eight-slide PowerPoint were rendered and visually
   checked. Every slide includes speaker notes; a slide PDF is also provided.
 
 ## Dataset citation
