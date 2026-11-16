@@ -88,7 +88,7 @@ $env:MPLBACKEND = 'Agg'
 Matplotlib may print that this backend cannot show a figure; the PNGs are still
 saved. Omit that environment setting to use interactive plot windows.
 You can also run
-[project_notebook.ipynb](./project_notebook.ipynb) from this repository folder;
+[dsc201_notebook.ipynb](./dsc201_notebook.ipynb) from this repository folder;
 it shows the function definitions in their relevant sections, using the same model logic as main.py, and includes short explanations of the findings.
 Its experiment cell loads completed CSV results by default. Set
 `RUN_EXPERIMENTS = True` there to rerun all model searches from the notebook.
@@ -97,7 +97,7 @@ If the result CSVs do not exist yet, run the full script first or enable that se
 ## Project files
 
 - [main.py](./main.py): shared data, plotting, model, tuning, and evaluation functions.
-- [project_notebook.ipynb](./project_notebook.ipynb): visible function definitions, saved outputs, plots, and explanations.
+- [dsc201_notebook.ipynb](./dsc201_notebook.ipynb): visible function definitions, saved outputs, plots, and explanations.
 - [report/project_notebook_output.pdf](./report/project_notebook_output.pdf): notebook PDF with the implementation and all 11 saved plots.
 - [data/glioma.csv](./data/glioma.csv): unchanged local copy of the 23 features and Grade.
 - [data/variable_dictionary.csv](./data/variable_dictionary.csv): UCI variable descriptions.
@@ -108,7 +108,7 @@ If the result CSVs do not exist yet, run the full script first or enable that se
 - [report/project_report.md](./report/project_report.md): written report based on the saved results.
 - [report/presentation_outline.md](./report/presentation_outline.md): eight-slide outline with speaker notes for about six minutes.
 - [report/project_report.pdf](./report/project_report.pdf): formatted report with tables, figures, and the UCI citation.
-- [report/presentation_submission.pptx](./report/presentation_submission.pptx): current eight-slide submission PowerPoint with simpler language and speaker notes.
+- [report/dsc201_Powerpoint.pptx](./report/dsc201_Powerpoint.pptx): current eight-slide submission PowerPoint with simpler language and speaker notes.
 - [report/presentation_submission.pdf](./report/presentation_submission.pdf): PDF copy of the current submission slides.
 - The earlier presentation.pptx and presentation.pdf are retained as previous versions.
 
