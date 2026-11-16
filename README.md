@@ -89,7 +89,7 @@ Matplotlib may print that this backend cannot show a figure; the PNGs are still
 saved. Omit that environment setting to use interactive plot windows.
 You can also run
 [project_notebook.ipynb](./project_notebook.ipynb) from this repository folder;
-it uses the same functions and includes short explanations of the findings.
+it shows the function definitions in their relevant sections, using the same model logic as main.py, and includes short explanations of the findings.
 Its experiment cell loads completed CSV results by default. Set
 `RUN_EXPERIMENTS = True` there to rerun all model searches from the notebook.
 If the result CSVs do not exist yet, run the full script first or enable that setting.
@@ -97,7 +97,8 @@ If the result CSVs do not exist yet, run the full script first or enable that se
 ## Project files
 
 - [main.py](./main.py): shared data, plotting, model, tuning, and evaluation functions.
-- [project_notebook.ipynb](./project_notebook.ipynb): executed code, plots, and explanations.
+- [project_notebook.ipynb](./project_notebook.ipynb): visible function definitions, saved outputs, plots, and explanations.
+- [report/project_notebook_output.pdf](./report/project_notebook_output.pdf): notebook PDF with the implementation and all 11 saved plots.
 - [data/glioma.csv](./data/glioma.csv): unchanged local copy of the 23 features and Grade.
 - [data/variable_dictionary.csv](./data/variable_dictionary.csv): UCI variable descriptions.
 - [results/model_results.csv](./results/model_results.csv): individual test and training scores, CV F1, seeds, and best parameters for each run.
@@ -107,8 +108,9 @@ If the result CSVs do not exist yet, run the full script first or enable that se
 - [report/project_report.md](./report/project_report.md): written report based on the saved results.
 - [report/presentation_outline.md](./report/presentation_outline.md): eight-slide outline with speaker notes for about six minutes.
 - [report/project_report.pdf](./report/project_report.pdf): formatted report with tables, figures, and the UCI citation.
-- [report/presentation.pptx](./report/presentation.pptx): editable eight-slide PowerPoint with speaker notes.
-- [report/presentation.pdf](./report/presentation.pdf): PDF copy of the slides for easy viewing.
+- [report/presentation_submission.pptx](./report/presentation_submission.pptx): current eight-slide submission PowerPoint with simpler language and speaker notes.
+- [report/presentation_submission.pdf](./report/presentation_submission.pdf): PDF copy of the current submission slides.
+- The earlier presentation.pptx and presentation.pdf are retained as previous versions.
 
 ## Presentation and submission
 
@@ -141,8 +143,11 @@ educational comparison, not clinical deployment or claims about individual patie
 ## Verification completed
 
 - The full script finished all 240 runs and saved 11 figures.
-- The notebook executed with saved experiment results, showing all 11 figures
-  without cell errors.
+- The earlier notebook executed with saved experiment results, showing all 11 figures
+  without cell errors. The latest notebook makes the function definitions visible;
+  its syntax, notebook structure, saved plots, and agreement with main.py were checked.
+  A fresh execution is currently blocked locally by Windows application control
+  blocking a scikit-learn DLL.
 - All 30 seeds and every selected parameter combination were checked.
 - All 32 summary rows were checked against the individual-run CSV, including
   sample SD (`ddof=1`), minimum, and maximum.

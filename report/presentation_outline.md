@@ -11,7 +11,7 @@ All scores below are from the completed experiments, not another study.
 - DSC 201 Project 2, Data Science II, University of Tampa
 - Using clinical and gene-mutation features
 
-**Speaker notes:** My project compares four machine learning models for glioma grade classification. I used the approved UCI dataset and kept the code close to the methods we covered in class. I will explain the data, the fair testing process, and the actual results.
+**Speaker notes:** My project compares four machine learning models for glioma grade classification. I used the UCI dataset and kept the code close to the methods we covered in class. I will explain the data, the fair testing process, and the actual results.
 
 ## Slide 2 - Introduction: the project question (30 seconds)
 
@@ -43,7 +43,7 @@ to identify. This makes it clear what those scores mean.
 
 **Visual:** [Class counts](../results/figures/class_distribution.png)
 
-**Speaker notes:** The approved dataset has 23 input features. Most are yes/no
+**Speaker notes:** The dataset has 23 input features. Most are yes/no
 gene-mutation indicators. There are more LGG than GBM cases, so I did not rely
 on accuracy alone. The original file and variable dictionary are saved with
 the project so the source can be checked.
@@ -51,7 +51,7 @@ the project so the source can be checked.
 ## Slide 5 - Exploration and preparation (55 seconds)
 
 - No missing values; one exact repeated record removed, leaving 838
-- No ages flagged by the IQR rule; all ages retained
+- No ages flagged as unusual; all ages retained
 - Race changed into separate yes/no columns
 - Example: GBM records have an older median age, but the groups overlap
 
@@ -66,16 +66,12 @@ an age difference in this sample, but age cannot perfectly separate the classes.
 ## Slide 6 - Four models and a fair test (65 seconds)
 
 - Logistic Regression, Random Forest, AdaBoost, and XGBoost
-- Small parameter grids and five-fold stratified GridSearchCV
-- Thirty 80/20 splits, with the same records for every model in each split
-- Tune on training data; report held-out test scores
-- Scale Logistic Regression inside its pipeline
+- Use 80% of the records to learn and keep 20% aside for testing
+- Try a few settings using the training records only
+- Repeat the comparison 30 times with the same records for every model
+- F1 balances finding GBM cases with avoiding incorrect GBM predictions
 
-**Speaker notes:** Every model got the same split within a repetition. I tuned
-settings using only the training set and chose them by GBM F1. The test set was
-used afterward. I repeated the full process 30 times because one split can give
-a misleading picture. Scaling stayed inside the Logistic Regression pipeline
-so validation and test data did not set the scaling values.
+**Speaker notes:** Each model uses the same training and test records. Eighty percent of the records are used for learning. I try a few settings using only those training records, and then check the chosen model on the remaining twenty percent. I repeat this 30 times to see how much results change. Accuracy means the share of all predictions that were correct. Precision checks how many predicted GBM cases were correct. Recall checks how many actual GBM cases were found. F1 balances those last two scores.
 
 ## Slide 7 - Actual results (80 seconds)
 
